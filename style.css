@@ -135,6 +135,14 @@ h2::after {
 }
 
 /* Books Section */
+.section-note {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(215, 181, 106, 0.8);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
 .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
