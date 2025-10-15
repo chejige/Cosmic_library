@@ -54,7 +54,7 @@
         <!-- Books Section -->
         <section id="books">
             <h2>书籍目录 | Book Collection</h2>
-            <p class="section-note">本目录仅展示部分馆藏书籍，完整书目及更多内容敬请期待「宇宙藏书阁」APP正式上线</p>
+            <p class="section-note">本目录仅展示部分馆藏书籍，完整书目及更多内容敬请期待「宇宙藏书阁」APP正式上线<br>预计上线时间：2025年12月25日 | 距离上线还有 <span id="countdown"></span> 天</p>
             <div class="books-grid">
                 <div class="book-category">
                     <h3>灵性成长类</h3>
@@ -195,6 +195,29 @@
             star.style.animationDelay = Math.random() * 3 + 's';
             starsContainer.appendChild(star);
         }
+
+        // Countdown timer
+        function updateCountdown() {
+            const launchDate = new Date('2025-12-25T00:00:00');
+            const now = new Date();
+            const timeDiff = launchDate - now;
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                if (daysRemaining > 0) {
+                    countdownElement.textContent = daysRemaining;
+                } else {
+                    countdownElement.textContent = '0';
+                }
+            }
+        }
+
+        // Update countdown on page load
+        updateCountdown();
+
+        // Update countdown every hour
+        setInterval(updateCountdown, 3600000);
     </script>
 </body>
 </html>
