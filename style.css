@@ -187,46 +187,67 @@ h2::after {
 
 /* Video Section */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     background: rgba(21, 17, 46, 0.5);
     border-radius: 20px;
     border: 1px solid rgba(215, 181, 106, 0.2);
-    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-container video {
     width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    height: auto;
+    border-radius: 15px;
+    outline: none;
 }
 
 /* Contact Section */
 .contact-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
 }
 
 .contact-item {
-    text-align: center;
     background: rgba(21, 17, 46, 0.5);
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid rgba(215, 181, 106, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.contact-item h3 {
+.contact-left {
+    text-align: center;
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-item h3,
+.contact-info h3 {
     font-size: 1.5rem;
     color: #D7B56A;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item p,
+.contact-info p {
+    margin-bottom: 1rem;
 }
 
 .qr-code {
@@ -236,14 +257,17 @@ h2::after {
     border: 2px solid rgba(215, 181, 106, 0.3);
 }
 
-.email-link {
+.email-link,
+.youtube-link {
     color: #D7B56A;
     text-decoration: none;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.email-link:hover {
+.email-link:hover,
+.youtube-link:hover {
     color: #E8D9A3;
     text-shadow: 0 0 10px rgba(215, 181, 106, 0.5);
 }
@@ -309,6 +333,14 @@ footer {
 
     .books-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-right {
+        gap: 1.5rem;
     }
 }
 
